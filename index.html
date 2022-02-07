@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>花磚物語系列 Azul</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+    <style>
+        body {
+            background-color: #C72D31;
+            color: #3f3f3f;
+            background-image: url(images/BG2.jpg);
+            background-repeat: round;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        header {
+            background-color: #C72D31;
+            color: #eee;
+        }
+
+        nav {
+            background-color: #C72D31;
+            padding-bottom: 0px;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        main>div {
+            background-color: #dadada;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        footer {
+            background-color: #C72D31;
+            color: #eee;
+        }
+
+        .arc1>div {
+            background-color: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        a {
+            color: #3f3f3f;
+        }
+
+        h1 {
+            font-weight: 900;
+        }
+
+        .navStyle a {
+            color: #C72D31;
+        }
+
+        .arc1 p {
+            margin-bottom: 3px;
+        }
+
+        .itemImg {
+            width: 100%;
+            padding-bottom: 100%;
+            height: 0;
+            background-color: #ffffff;
+            border: 1px solid black;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+
+
+        .logoTxt {
+            font-size: 2rem;
+            font-weight: 900;
+        }
+
+        .logoImg {
+            width: 100%;
+            padding-bottom: 100%;
+            height: 0;
+        }
+
+        header .space {
+            flex: 1;
+        }
+
+        .borderR {
+            border-width: 1px;
+            border-style: solid;
+            border-color: #999;
+            /* border-image:
+                linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0),
+                    #000,
+                    rgba(0, 0, 0, 0)) 1 100%; */
+            border-top: none;
+            border-bottom: none;
+            border-left: none;
+        }
+
+        .itemSelectName {
+            width: 100px;
+            flex-shrink: 0;
+        }
+
+        .prize {
+            color: #C72D31;
+        }
+
+        .type {
+            background-color: #fff;
+            border: 1px solid #a1a1a1;
+            border-radius: 4px;
+            margin-right: 1rem;
+            margin-bottom: 10px;
+            padding: 5px 10px;
+        }
+
+        .buyNumBar {
+            width: 5rem;
+            padding-left: 8px;
+            border-radius: 4px;
+            border: 1px solid #a1a1a1;
+        }
+
+        .buyBtn {
+            font-size: 30px;
+            color: #ddd;
+            background-color: #C72D31;
+            border-radius: 4px;
+            border: none;
+            padding: 4px 24px;
+        }
+
+        .pImg {
+            max-width: 80vw;
+        }
+
+        .decBar {
+            height: 1rem;
+        }
+
+        .margin- {
+            margin-left: -2rem;
+            margin-right: -2rem;
+        }
+
+        /* .navbarIcon {
+            background-color: #eee;
+        } */
+
+        .searchBtn {
+            display: inline-block;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #eee;
+            text-align: center;
+            text-decoration: none;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            background-color: #b31e1e;
+            /* border: 1px solid transparent; */
+            border-color: #dc3545;
+
+            font-size: 1rem;
+            border-radius: 0rem 0.25rem 0.25rem 0rem;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        .searchBar {
+            display: block;
+            width: 100%;
+            padding-left: 0.5rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            background-color: #fff;
+            background-clip: padding-box;
+            border-right: 1px solid #ced4da;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: 0.25rem 0rem 0rem 0.25rem;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        @media screen and (max-width:400px) {
+            .logoTxt {
+                font-size: 3rem;
+                font-weight: 900;
+            }
+
+            header .space {
+                flex: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center">
+                <!-- <div style="height: 2rem; width: 2rem;">
+                    <div class="logoImg" style="background: url(images/Logo.png)no-repeat center /cover"></div>
+                </div> -->
+                <div class="logoTxt my-3 my-lg-0">MARC 桌遊庫</div>
+                <div class="space"></div>
+                <form class="d-flex py-2">
+                    <input class="searchBar" type="search" placeholder="搜尋桌遊 GO" aria-label="Search">
+                    <button class="searchBtn me-3" type="submit">Search</button>
+                </form>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="none" d="M0 0h24v24H0z" />
+                    <path
+                        d="M4 6.414L.757 3.172l1.415-1.415L5.414 5h15.242a1 1 0 0 1 .958 1.287l-2.4 8a1 1 0 0 1-.958.713H6v2h11v2H5a1 1 0 0 1-1-1V6.414zM5.5 23a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm12 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                </svg>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar-expand-lg navbar-light navStyle">
+        <div class="container my-2">
+            <button class="navbar-toggler navbarIcon" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav navbar-end ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            桌遊分類
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">派對桌遊</a></li>
+                            <li><a class="dropdown-item" href="#">親子桌遊</a></li>
+                            <li>
+                            <li><a class="dropdown-item" href="#">角色扮演</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">輕策桌遊</a></li>
+                            <li>
+                            <li><a class="dropdown-item" href="#">中策桌遊</a></li>
+                            <li>
+                            <li><a class="dropdown-item" href="#">重策桌遊</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">故事</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">帳戶</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">點數</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <main class="container">
+        <div class="my-4 mx-2 mx-lg-0 p-2 shadow">
+            <div class="mb-2 margin-" style="opacity: 60%;">
+                <div class="decBar" style="background: url(images/Union.png)repeat-x center /contain"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-5 borderR pe-lg-4">
+                    <div class="d-flex justify-content-center mb-2">
+                        <div class="itemImg" style="background: url(images/item01.jpg)no-repeat center /cover"></div>
+                    </div>
+                    <div class="row gx-1">
+                        <div class="col-3">
+                            <div class="itemImg" style="background: url(images/item01.jpg)no-repeat center /cover">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="itemImg" style="background: url(images/item02.jpg)no-repeat center /cover">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="itemImg" style="background: url(images/item03.jpg)no-repeat center /cover">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="itemImg" style="background: url(images/item04.jpg)no-repeat center /cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 ps-4">
+                    <h1 class="mt-3 mt-lg-0">AZUL花磚物語 系列</h1>
+                    <div class="d-flex">
+                        <p class="borderR pe-3 me-3">評價<a href="#" class="ms-2">88</a></p>
+                        <p>已售出
+                        <p class="sellCount ms-2">25</p>
+                        </p>
+                    </div>
+                    <h2 id="prize" class="prize mt-4 mb-5" style="font-weight: bold;">$1499</h2>
+                    <div class="d-flex flex-column mb-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="itemSelectName">種類</div>
+                            <div class="d-wrap">
+                                <button class="type">花磚物語</button>
+                                <button class="type">擴充 - 琉璃之光</button>
+                                <button class="type">擴充 - 馬賽克水晶</button>
+                                <button class="type">擴充 - 夏日行宮</button>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3 align-items-center">
+                            <div class="itemSelectName">數量</div>
+                            <input type="number" maxlength="25" class="buyNumBar me-2" id="buyNum">
+                            <div id="count">還剩 75 件</div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="button" value="立即購買" class="buyBtn" onclick="return buyNumCheck(this);">
+                    </div>
+                </div>
+            </div>
+            <div class=" mt-2 margin-" style="opacity: 60%;">
+                <div class="decBar" style="background: url(images/Union.png)repeat-x center /contain"></div>
+            </div>
+        </div>
+    </main>
+    <div class=" arc1 container ">
+        <div class=" flex-column my-4 mx-2 mx-lg-0 p-2 shadow">
+            <div class="mb-2 margin-" style="opacity: 60%;">
+                <div class="decBar" style="background: url(images/Union.png)repeat-x center /contain"></div>
+            </div>
+            <p style="font-weight: bold;">《花磚物語》榮獲獎項：</p>
+            <p> 2017 德國埃森展玩家票選第一名</p>
+            <p> 2017 Gold Geek Award最佳家庭遊戲</p>
+            <p> 2018 德國SDJ年度遊戲大獎</p>
+            <p> 2018 法國坎城As d’Or 獎</p>
+            <p> 2018 美國Oringins最佳家庭遊戲獎</p>
+            <p> 2018 Mensa Select門薩精選獎</p>
+            <p> 2018 北京Dice Con最佳家庭遊戲獎</p>
+            <hr>
+            <img src="images/getImage (1).jfif" alt="" class="pImg">
+            <br>
+            <br>
+            <img src="images/getImage (2).jfif" alt="" class="pImg">
+            <br>
+            <br>
+            <img src="images/getImage (3).jfif" alt="" class="pImg">
+            <br>
+            <br>
+            <img src="images/getImage (4).jfif" alt="" class="pImg">
+            <br>
+            <div class="mt-2 margin-" style="opacity: 60%;">
+                <div class="decBar" style="background: url(images/Union.png)repeat-x center /contain"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-2">
+        <div class="container">
+            © 2022 MARC 版權所有
+        </div>
+    </footer>
+
+    <script>
+        function buyNumCheck() {
+            var buyNum = $("#buyNum").val();
+
+            if (buyNum == "") {
+                alert("請選擇購買數量");
+                return false;
+            }
+            else {
+                $.cookie("buyNum", buyNum, { path: "/" });
+                window.location.replace("SignUp.html");
+            }
+        }
+    </script>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
