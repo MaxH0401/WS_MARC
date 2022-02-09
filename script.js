@@ -1,62 +1,125 @@
-////02 SignUp////
+////01 index////
 
-$("#pwd1").keyup(
+//紀錄購買類別
+$('.typeTemp').val(0);
+function typeCheck(item) {
+    if ($('.typeTemp').val() == item) {
+        $('.typeTemp').val(0);
+        console.log($('.typeTemp').val());
+    }
+    else {
+        $('.typeTemp').val(item);
+        console.log($('.typeTemp').val());
+    }
+}
+
+//將數量類別傳入cookie
+function buyNumCheck() {
+    let buyNum = $('#buyNum').val();
+    let buyItem = $('.typeTemp').val();
+
+    if (buyItem === 0) {
+        alert('請選擇產品類別');
+        return false;
+    }
+    else if (buyNum == '') {
+        alert('請選擇購買數量');
+        return false;
+    }
+    else {
+        $.cookie('buyNum', buyNum, { path: '/' });
+        $.cookie('buyItem', buyItem, { path: '/' });
+        window.location.replace('signUp.html');
+    }
+}
+
+
+////02 signUp////
+
+$('#pwd1').keyup(
     function check() {
-        var pwd1 = $(this).val();
+        let pwd1 = $(this).val();
         if (pwd1.length < 8) {
-            $("#output1").text("密碼長度太短(至少8位)");
-            $("#output1").attr("class", "alertTxtW")
+            $('#output1').text('密碼長度太短(至少8位)');
+            $('#output1').attr('class', 'alertTxtW')
         } else {
-            $("#output1").text("此密碼可使用");
-            $("#output1").attr("class", "alertTxt")
+            $('#output1').text('此密碼可使用');
+            $('#output1').attr('class', 'alertTxt')
         }
     }
 );
 
-$("#pwd2").keyup(
+$('#pwd2').keyup(
     function check() {
-        var pwd1 = $("#pwd1").val();
-        var pwd2 = $(this).val();
+        let pwd1 = $('#pwd1').val();
+        let pwd2 = $(this).val();
         if (pwd1 === pwd2) {
-            $("#output2").text("密碼兩次輸入一致");
-            $("#output2").attr("class", "alertTxt")
+            $('#output2').text('密碼兩次輸入一致');
+            $('#output2').attr('class', 'alertTxt')
         } else {
-            $("#output2").text("密碼兩次輸入不一致");
-            $("#output2").attr("class", "alertTxtW")
+            $('#output2').text('密碼兩次輸入不一致');
+            $('#output2').attr('class', 'alertTxtW')
         }
     }
 );
 
 function accountCheck() {
-    var realname = $("#realname").val();
-    var username = $("#username").val();
-    var email = $("#email").val();
-    var pwd1 = $("#pwd1").val();
-    var pwd2 = $("#pwd2").val();
+    let realname = $('#realname').val();
+    let username = $('#username').val();
+    let email = $('#email').val();
+    let pwd1 = $('#pwd1').val();
+    let pwd2 = $('#pwd2').val();
 
 
-    if (realname == "") {
-        alert("請輸入真實姓名");
+    if (realname == '') {
+        alert('請輸入真實姓名');
         return false;
     }
-    else if (username == "") {
-        alert("請輸入帳號名稱");
+    else if (username == '') {
+        alert('請輸入帳號名稱');
         return false;
     }
     else if (pwd1.length < 8) {
-        alert("密碼長度不得小於8");
+        alert('密碼長度不得小於8');
         return false;
     }
     else if (pwd1 !== pwd2) {
-        alert("密碼兩次輸入不一致");
+        alert('密碼兩次輸入不一致');
         return false;
     }
     else {
-        alert("註冊成功! 將跳轉購買頁面");
-        console.log("success");
-        $.cookie("realname", realname, { path: "/" });
-        $.cookie("username", username, { path: "/" });
-        $.cookie("email", email, { path: "/" });
-        window.location.replace("Order.html");
+        alert('註冊成功! 將跳轉購買頁面');
+        console.log('success');
+        $.cookie('realname', realname, { path: '/' });
+        $.cookie('username', username, { path: '/' });
+        $.cookie('email', email, { path: '/' });
+        window.location.replace('order.html');
     }
 }
+
+////03 Order////
+
+//jQuery Bind//
+$('#buyNum').bind('input', function () {
+    let totalPrize = $('#buyNum').val() * 1499;
+    $('#totalPrize').text(totalPrize);
+});
+
+function buyCheck() {
+    let receiverName = $('#realname').val();
+    let address = $('#address').val();
+
+    if (receiverName == '') {
+        alert('請輸入收件人');
+        return false;
+    }
+    else if (address == '') {
+        alert('請輸入寄送地址');
+        return false;
+    }
+    else {
+        alert('成功送出訂單!');
+        window.location.replace('index.html');
+    }
+}
+
