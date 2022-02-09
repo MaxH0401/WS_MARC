@@ -11,9 +11,25 @@ function typeCheck(item) {
     else {
         $('.typeTemp').val(item);
         console.log($('.typeTemp').val());
-        // console.log($('.itemImg[item]').css(background - Image));
-        // 想做切換圖片但還有bug...
-        // $('.mainItem').css(background - Image) = $('.itemImg[item]').css(background - Image);
+    }
+
+    switch (item) {
+        case 1: {
+            $('.mainItem').css('background-image', 'url(images/item01.jpg)')
+            break;
+        }
+        case 2: {
+            $('.mainItem').css('background-image', 'url(images/item02.jpg)')
+            break;
+        }
+        case 3: {
+            $('.mainItem').css('background-image', 'url(images/item03.jpg)')
+            break;
+        }
+        case 4: {
+            $('.mainItem').css('background-image', 'url(images/item04.jpg)')
+            break;
+        }
     }
 }
 
