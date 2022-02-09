@@ -96,24 +96,27 @@
     <header>
         <div class='container'>
             <div class='d-flex flex-wrap align-items-center justify-content-center'>
-                <div class='logoTxt my-3 my-lg-0 d-flex flex-wrap'>
-                    <div class='me-3'>MARC</div>
-                    <div class='me-3'>Board Game</div>
-                </div>
+                <a href='index.html'>
+                    <div class='logoTxt my-3 my-lg-0 d-flex flex-wrap'>
+                        <div class='me-3'>MARC</div>
+                        <div class='me-3'>Board Game</div>
+                    </div>
+                </a>
                 <div class='space'></div>
                 <form class='d-flex py-2'>
                     <input class='searchBar' type='search' placeholder='搜尋桌遊 GO' aria-label='Search'>
                     <button class='searchBtn me-3' type='submit'>Search</button>
                 </form>
-                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'>
-                    <path fill='none' d='M0 0h24v24H0z' />
-                    <path
-                        d='M4 6.414L.757 3.172l1.415-1.415L5.414 5h15.242a1 1 0 0 1 .958 1.287l-2.4 8a1 1 0 0 1-.958.713H6v2h11v2H5a1 1 0 0 1-1-1V6.414zM5.5 23a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm12 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z' />
-                </svg>
+                <a href='signUp.html'>
+                    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='28' height='28' class='cartIcon'>
+                        <path fill='none' d='M0 0h24v24H0z' />
+                        <path fill='#d8d8d8'
+                            d='M4 6.414L.757 3.172l1.415-1.415L5.414 5h15.242a1 1 0 0 1 .958 1.287l-2.4 8a1 1 0 0 1-.958.713H6v2h11v2H5a1 1 0 0 1-1-1V6.414zM5.5 23a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm12 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z' />
+                    </svg>
+                </a>
             </div>
         </div>
     </header>
-
     <nav class='navbar-expand-lg navbar-light navStyle'>
         <div class='container my-2'>
             <button class='navbar-toggler navbarIcon' type='button' data-bs-toggle='collapse'
@@ -163,7 +166,7 @@
                 <h1 class='title text-center'>訂單確認</h1>
                 <form method='post'>
                     <p>購買品項：</p>
-                    <div class='itemList d-flex flex-wrap justify-content-between align-items-center'>
+                    <div class='itemList p-2 d-flex flex-wrap justify-content-between align-items-center'>
                         <div id='buyItem'></div>
                         <div class='d-flex flex-wrap'>
                             <div id='totalNum' class='me-2'>數量</div>

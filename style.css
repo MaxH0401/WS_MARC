@@ -71,6 +71,13 @@ h1 {
     justify-content:end;
 }
 
+.mainItem{
+    background-image: url(images/item01.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
 .itemImg {
     width: 100%;
     padding-bottom: 100%;
@@ -225,7 +232,7 @@ form input {
 .box {
     border-radius: 10px;
     overflow: hidden;
-    max-width: 400px;
+    max-width: 500px;
     width: 80vw;
     margin: 44px;
 }
@@ -266,20 +273,23 @@ form input {
 /* Order */
 
 .itemList{
-    background-color: #fff;
+    background-color: #ffffff7c;
 }
 
 .requiredStar{
     color: red;
 }
 
-@media screen and (max-width:400px) {
-    .logoTxt {
-        font-size: 3rem;
-        font-weight: 900;
-    }
-
+@media screen and (max-width:768px) {
     header .space {
         flex: 0;
     }
+}
+
+@media screen and (max-width:400px) {
+    .logoTxt {
+        font-size: 3rem;
+    }
+
+   
 }

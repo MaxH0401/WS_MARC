@@ -1,5 +1,6 @@
 ////01 index////
 
+
 //紀錄購買類別
 $('.typeTemp').val(0);
 function typeCheck(item) {
@@ -10,6 +11,9 @@ function typeCheck(item) {
     else {
         $('.typeTemp').val(item);
         console.log($('.typeTemp').val());
+        // console.log($('.itemImg[item]').css(background - Image));
+        // 想做切換圖片但還有bug...
+        // $('.mainItem').css(background - Image) = $('.itemImg[item]').css(background - Image);
     }
 }
 
